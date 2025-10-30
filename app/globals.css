@@ -1,0 +1,440 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Material Design 3 Color System - Light Theme */
+  --md-primary: oklch(0.47 0.15 264);
+  --md-on-primary: oklch(1 0 0);
+  --md-primary-container: oklch(0.9 0.08 264);
+  --md-on-primary-container: oklch(0.13 0.05 264);
+
+  --md-secondary: oklch(0.45 0.08 264);
+  --md-on-secondary: oklch(1 0 0);
+  --md-secondary-container: oklch(0.88 0.04 264);
+  --md-on-secondary-container: oklch(0.15 0.04 264);
+
+  --md-tertiary: oklch(0.52 0.12 330);
+  --md-on-tertiary: oklch(1 0 0);
+  --md-tertiary-container: oklch(0.92 0.06 330);
+  --md-on-tertiary-container: oklch(0.18 0.06 330);
+
+  --md-error: oklch(0.54 0.22 25);
+  --md-on-error: oklch(1 0 0);
+  --md-error-container: oklch(0.93 0.08 25);
+  --md-on-error-container: oklch(0.25 0.12 25);
+
+  --md-surface: oklch(0.98 0 0);
+  --md-on-surface: oklch(0.2 0 0);
+  --md-surface-variant: oklch(0.9 0.01 264);
+  --md-on-surface-variant: oklch(0.35 0.02 264);
+
+  --md-surface-container-lowest: oklch(1 0 0);
+  --md-surface-container-low: oklch(0.96 0 0);
+  --md-surface-container: oklch(0.94 0 0);
+  --md-surface-container-high: oklch(0.92 0.01 264);
+  --md-surface-container-highest: oklch(0.9 0.01 264);
+
+  --md-outline: oklch(0.6 0.02 264);
+  --md-outline-variant: oklch(0.8 0.01 264);
+
+  --md-success: oklch(0.55 0.15 145);
+  --md-on-success: oklch(1 0 0);
+  --md-warning: oklch(0.65 0.15 85);
+  --md-on-warning: oklch(0.15 0 0);
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --md-primary: oklch(0.8 0.12 264);
+  --md-on-primary: oklch(0.2 0.08 264);
+  --md-primary-container: oklch(0.3 0.12 264);
+  --md-on-primary-container: oklch(0.9 0.08 264);
+
+  --md-secondary: oklch(0.75 0.06 264);
+  --md-on-secondary: oklch(0.22 0.04 264);
+  --md-secondary-container: oklch(0.32 0.06 264);
+  --md-on-secondary-container: oklch(0.88 0.04 264);
+
+  --md-tertiary: oklch(0.82 0.1 330);
+  --md-on-tertiary: oklch(0.28 0.08 330);
+  --md-tertiary-container: oklch(0.38 0.1 330);
+  --md-on-tertiary-container: oklch(0.92 0.06 330);
+
+  --md-error: oklch(0.73 0.18 25);
+  --md-on-error: oklch(0.35 0.15 25);
+  --md-error-container: oklch(0.45 0.18 25);
+  --md-on-error-container: oklch(0.93 0.08 25);
+
+  --md-surface: oklch(0.13 0.01 264);
+  --md-on-surface: oklch(0.9 0 0);
+  --md-surface-variant: oklch(0.3 0.02 264);
+  --md-on-surface-variant: oklch(0.75 0.02 264);
+
+  --md-surface-container-lowest: oklch(0.08 0.01 264);
+  --md-surface-container-low: oklch(0.15 0.01 264);
+  --md-surface-container: oklch(0.18 0.01 264);
+  --md-surface-container-high: oklch(0.22 0.01 264);
+  --md-surface-container-highest: oklch(0.26 0.02 264);
+
+  --md-outline: oklch(0.5 0.02 264);
+  --md-outline-variant: oklch(0.35 0.02 264);
+
+  --md-success: oklch(0.65 0.13 145);
+  --md-on-success: oklch(0.15 0.08 145);
+  --md-warning: oklch(0.75 0.13 85);
+  --md-on-warning: oklch(0.2 0.08 85);
+
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* Switching to Roboto for Material Design 3 typography */
+  --font-sans: "Roboto", system-ui, -apple-system, sans-serif;
+  --font-mono: "Roboto Mono", monospace;
+
+  --color-primary: var(--md-primary);
+  --color-primary-foreground: var(--md-on-primary);
+  --color-primary-container: var(--md-primary-container);
+  --color-on-primary-container: var(--md-on-primary-container);
+
+  --color-secondary: var(--md-secondary);
+  --color-secondary-foreground: var(--md-on-secondary);
+  --color-secondary-container: var(--md-secondary-container);
+  --color-on-secondary-container: var(--md-on-secondary-container);
+
+  --color-tertiary: var(--md-tertiary);
+  --color-tertiary-foreground: var(--md-on-tertiary);
+  --color-tertiary-container: var(--md-tertiary-container);
+  --color-on-tertiary-container: var(--md-on-tertiary-container);
+
+  --color-error: var(--md-error);
+  --color-error-foreground: var(--md-on-error);
+  --color-error-container: var(--md-error-container);
+  --color-on-error-container: var(--md-on-error-container);
+
+  --color-surface: var(--md-surface);
+  --color-on-surface: var(--md-on-surface);
+  --color-surface-variant: var(--md-surface-variant);
+  --color-on-surface-variant: var(--md-on-surface-variant);
+
+  --color-surface-container-lowest: var(--md-surface-container-lowest);
+  --color-surface-container-low: var(--md-surface-container-low);
+  --color-surface-container: var(--md-surface-container);
+  --color-surface-container-high: var(--md-surface-container-high);
+  --color-surface-container-highest: var(--md-surface-container-highest);
+
+  --color-outline: var(--md-outline);
+  --color-outline-variant: var(--md-outline-variant);
+
+  --color-success: var(--md-success);
+  --color-success-foreground: var(--md-on-success);
+  --color-warning: var(--md-warning);
+  --color-warning-foreground: var(--md-on-warning);
+
+  --color-background: var(--md-surface);
+  --color-foreground: var(--md-on-surface);
+  --color-card: var(--md-surface-container);
+  --color-card-foreground: var(--md-on-surface);
+  --color-popover: var(--md-surface-container-high);
+  --color-popover-foreground: var(--md-on-surface);
+  --color-muted: var(--md-surface-variant);
+  --color-muted-foreground: var(--md-on-surface-variant);
+  --color-accent: var(--md-tertiary);
+  --color-accent-foreground: var(--md-on-tertiary);
+  --color-destructive: var(--md-error);
+  --color-destructive-foreground: var(--md-on-error);
+  --color-border: var(--md-outline-variant);
+  --color-input: var(--md-outline);
+  --color-ring: var(--md-primary);
+
+  --color-chart-1: var(--md-primary);
+  --color-chart-2: var(--md-secondary);
+  --color-chart-3: var(--md-success);
+  --color-chart-4: var(--md-warning);
+  --color-chart-5: var(--md-error);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.75rem;
+  --radius-full: 9999px;
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-outline-variant;
+  }
+
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+  }
+
+  /* Material Design 3 Typography Scale */
+  /* Display */
+  .text-display-large {
+    font-size: 57px;
+    line-height: 64px;
+    font-weight: 400;
+    letter-spacing: -0.25px;
+  }
+
+  .text-display-medium {
+    font-size: 45px;
+    line-height: 52px;
+    font-weight: 400;
+  }
+
+  .text-display-small {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 400;
+  }
+
+  /* Headline */
+  .text-headline-large {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 400;
+  }
+
+  .text-headline-medium {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 400;
+  }
+
+  .text-headline-small {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+  }
+
+  /* Title */
+  .text-title-large {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+
+  .text-title-medium {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: 0.15px;
+  }
+
+  .text-title-small {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+  }
+
+  /* Body */
+  .text-body-large {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  .text-body-medium {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+  }
+
+  .text-body-small {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+  }
+
+  /* Label */
+  .text-label-large {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+  }
+
+  .text-label-medium {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .text-label-small {
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+}
+
+@layer utilities {
+  .elevation-0 {
+    box-shadow: none;
+  }
+
+  .elevation-1 {
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  }
+
+  .elevation-2 {
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  }
+
+  .elevation-3 {
+    box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  .elevation-4 {
+    box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  .elevation-5 {
+    box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Adding focus mode animation */
+  @keyframes focus-text-appear {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) translateY(20px);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    80% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.1) translateY(-20px);
+    }
+  }
+
+  .animate-focus-text {
+    animation: focus-text-appear 3s ease-in-out forwards;
+  }
+
+  /* Focus mode styles for navigation and UI elements */
+  /* When focus mode is active, darken and desaturate the navigation */
+  body[data-focus-mode="true"] .focus-mode-nav {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    transition: all 1s ease-in-out;
+  }
+
+  /* Desaturate and mute navigation buttons in focus mode */
+  body[data-focus-mode="true"] .focus-mode-buttons a {
+    background-color: rgba(128, 128, 128, 0.2) !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    transition: all 1s ease-in-out;
+  }
+
+  /* Active button in focus mode should be slightly more visible but still muted */
+  body[data-focus-mode="true"] .focus-mode-buttons a[class*="bg-secondary-container"] {
+    background-color: rgba(128, 128, 128, 0.3) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  /* Mute the logo in focus mode */
+  body[data-focus-mode="true"] .focus-mode-nav .flex-shrink-0 > div {
+    opacity: 0.4;
+    filter: grayscale(0.8);
+    transition: all 1s ease-in-out;
+  }
+
+  /* Mute theme toggle button in focus mode */
+  body[data-focus-mode="true"] .focus-mode-nav button {
+    opacity: 0.4;
+    transition: all 1s ease-in-out;
+  }
+
+  /* Remove hover effects in focus mode to reduce distractions */
+  body[data-focus-mode="true"] .focus-mode-buttons a:hover {
+    background-color: rgba(128, 128, 128, 0.25) !important;
+  }
+}
